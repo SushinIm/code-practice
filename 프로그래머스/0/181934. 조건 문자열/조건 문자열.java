@@ -3,18 +3,10 @@ class Solution {
         int answer = 0;
         
         switch(ineq + eq) {
-            case ">=" :
-                answer = n >= m ? 1 : 0;
-                break;
-            case "<=" :
-                answer = n <= m ? 1 : 0;
-                break;
-            case ">!" :
-                answer = n > m ? 1 : 0;
-                break;
-            case "<!" :
-                answer = n < m ? 1 : 0;
-                break;
+            case ">=" -> answer = n >= m ? 1 : 0;
+            case "<=" -> answer = n <= m ? 1 : 0;
+            case ">!" -> answer = n > m ? 1 : 0;
+            case "<!" -> answer = n < m ? 1 : 0;
         }
         
         return answer;
