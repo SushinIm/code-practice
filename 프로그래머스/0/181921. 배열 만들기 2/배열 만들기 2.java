@@ -1,19 +1,16 @@
-import java.util.stream.IntStream;
+import java.util.ArrayList;
 
 class Solution {
     public int[] solution(int l, int r) {
-        int[] answer = IntStream.rangeClosed(l, r)
-            .filter(num -> {
-                while (num > 0) {
-                    int n = num % 10;
-                    if (n != 0 && n != 5) {
-                        return false;
-                    }
-                    num /= 10;
-                }
-                return true;
-            }).toArray();
-        
-        return answer.length > 0 ? answer : new int[] {-1};
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 1; i < 64; i++) {
+            int num = Integer.parseInt(Integer.toBinaryString(i)) * 5;
+            if (l <= num && num <= r)
+                list.add(num);
+        }
+
+        return list.isEmpty() ? new int[] { -1 } : list.stream().mapToInt(i -> i).toArray();
     }
 }
