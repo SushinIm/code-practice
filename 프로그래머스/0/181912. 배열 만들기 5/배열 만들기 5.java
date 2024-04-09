@@ -1,10 +1,23 @@
-import java.util.Arrays;
+import java.util.ArrayList;
 
 class Solution {
     public int[] solution(String[] intStrs, int k, int s, int l) {
-        return Arrays.stream(intStrs)
-            .mapToInt(intStr -> Integer.parseInt(intStr.substring(s, s + l)))
-            .filter(intStr -> intStr > k)
-            .toArray();
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < intStrs.length; i++) {
+            int tmp = Integer.parseInt(intStrs[i].substring(s, s + l));
+            if (tmp > k) {
+                list.add(tmp);
+            }
+        }
+        
+        int[] answer = new int[list.size()];
+
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = list.get(i);
+        }
+
+        return answer;
     }
 }
