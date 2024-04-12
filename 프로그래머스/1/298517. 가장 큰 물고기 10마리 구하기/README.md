@@ -1,6 +1,6 @@
 # [level 1] 가장 큰 물고기 10마리 구하기 - 298517 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/298517) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/298517#qna) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 04월 12일 17:18:16
+2024년 04월 12일 17:20:59
 
 ### 문제 설명
 
