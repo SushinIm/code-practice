@@ -2,28 +2,22 @@ import java.util.*;
 
 public class Solution {
     public int[] solution(int[] arr) {
-        
-		int[] answer = {};
-        int count = 1;
-        for(int i = 1; i < arr.length; i++){
-            if(arr[i-1] != arr[i]){
-                count++;
+        List<Integer> list = new ArrayList<>();
+        int current = arr[0];
+
+        list.add(current);
+        for (int i = 1; i < arr.length; i++) {
+            if (current != arr[i]) {
+                current = arr[i];
+                list.add(arr[i]);
             }
         }
-        
-        int index = 1;
-        int flag = 0;
-        answer = new int[count];
-        flag = arr[0];
-        answer[0] = flag;
-        for(int i : arr){
-            if(flag != i){
-                flag = i;
-            	answer[index] = flag;
-                index++;
-            }
+
+        int[] answer = new int[list.size()];
+        for (int i = 0; i < answer.length; i++) {
+            answer[i] = list.get(i);
         }
-        
+
         return answer;
     }
 }
